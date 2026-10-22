@@ -2,3 +2,5 @@
 > To access the website and releases repository:
 # OlaxeeTools-All-Source-Code
 ### Without Releases
+
+🌐 - [FR](https://github.com/Olaxee/OlaxeeTools-All-Source-Code/blob/main/README-FR.md) *for other languages*.
