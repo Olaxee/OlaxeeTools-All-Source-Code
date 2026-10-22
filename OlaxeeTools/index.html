@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OlaxeeTools - Téléchargement</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Section README scrollable avec scrollbar invisible */
+    #readme .readme-content {
+      max-height: 70vh;
+      overflow-y: auto;
+      padding-right: 1rem;
+      padding-bottom: 5rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    #readme .readme-content::-webkit-scrollbar {
+      display: none;
+    }
+    #readme .nav-arrows {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    #readme .nav-arrow {
+      cursor: pointer;
+      user-select: none;
+      font-size: 2rem;
+      color: var(--accent);
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+    }
+    #readme .nav-arrow:hover:not(.disabled) {
+      background-color: rgba(110, 231, 183, 0.2);
+    }
+    #readme .nav-arrow.disabled {
+      opacity: 0.3;
+      cursor: default;
+      pointer-events: none;
+    }
+    #readme .page-counter {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 1rem;
+      min-width: 90px;
+      text-align: center;
+      user-select: none;
+    }
+    #readme .readme-content p,
+    #readme .readme-content h3,
+    #readme .readme-content ol,
+    #readme .readme-content ul {
+      text-align: left;
+      color: #cfe3e9;
+      line-height: 1.45;
+      margin-bottom: 1rem;
+    }
+    #readme .readme-content h3 {
+      color: var(--text);
+    }
+    #readme .readme-content ol,
+    #readme .readme-content ul {
+      margin-left: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Accueil -->
+    <section id="home" class="page current" data-title="Accueil">
+      <div class="center">
+        <h1>OlaxeeTools</h1>
+        <p class="lead">
+          Outil pour détecter et afficher l'adresse IP privée sur une machine locale.
+        </p>
+        <p class="lead">
+          Fournit un serveur local prêt à l'emploi.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" id="to-download">Télécharger l'EXE</a>
+          <a class="btn ghost" id="to-readme">Voir le README</a>
+        </div>
+        <div class="meta">
+          <strong>Utilité :</strong>
+          <span>détecter l'IP privée locale et lancer facilement le serveur local.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Téléchargement -->
+    <section id="download" class="page" data-title="Téléchargement">
+      <div class="center">
+        <h2>Télécharger <code>iP_OlaxeeTools.exe</code></h2>
+        <p class="lead">
+          L'exécutable contient :
+        </p>
+        <ul class="file-list" style="list-style:none; padding-left:0;">
+          <li><strong>iP_OlaxeeTools.exe</strong> — lance le serveur local et l'interface directement.</li>
+        </ul>
+
+        <a href="https://github.com/Olaxee/OlaxeeTools/releases/download/Releases1/iP_OlaxeeTools.exe" target="_blank" download class="btn big">Télécharger EXE</a>
+
+        <div class="notes">
+          <p><strong>Instructions :</strong> Après téléchargement, double-cliquez sur <code>iP_OlaxeeTools.exe</code> pour lancer le serveur et ouvrir automatiquement l'interface.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- README -->
+    <section id="readme" class="page" data-title="README" tabindex="0">
+      <div class="center" style="max-width:900px;">
+        <h2>README — Mode d'emploi</h2>
+        <h3>README pour ordinateurs</h3>
+        <div class="readme-content" id="readme-content" tabindex="0" aria-live="polite" aria-atomic="true"></div>
+        <div class="nav-arrows" aria-label="Navigation du README">
+          <div id="arrow-left" class="nav-arrow" role="button" tabindex="0" aria-disabled="true" aria-label="Page précédente">&#x25C0;</div>
+          <div class="page-counter" id="page-counter">1 / 1</div>
+          <div id="arrow-right" class="nav-arrow" role="button" tabindex="0" aria-label="Page suivante">&#x25B6;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile -->
+    <section id="mobile" class="page" data-title="Mobile">
+      <div class="center">
+        <h2>OlaxeeTools Mobile</h2>
+        <p>Aide pour installer l'APK : <a href="https://www.frandroid.com/comment-faire/tutoriaux/184151_comment-installer-un-fichier-apk-sur-son-terminal-android#installer-lapk" target="_blank" rel="noopener noreferrer">Guide APK Android</a></p>
+        <a href="https://github.com/Olaxee/OlaxeeTools/releases/download/Releases2/iP_OlaxeeTools.apk" target="_blank" download class="btn primary big">Télécharger APK</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="page" data-title="Contact">
+      <div class="center">
+        <h2>Contact</h2>
+        <p class="lead">Pour toute question ou suggestion :</p>
+        <div style="text-align: center; position: relative; display: inline-block;">
+          <!-- Ligne des emails -->
+           <div>
+            <a href="mailto:olaxee00@gmail.com" class="btn">olaxee00@gmail.com</a>
+            <a href="mailto:owenleroux09@gmail.com" class="btn">owenleroux09@gmail.com</a>
+          </div>
+  
+          <!-- Ligne des boutons GitHub -->
+           <div style="position: relative;">
+            <a href="https://github.com/Olaxee" class="btn" target="_blank" style="position: absolute; left: 0; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width: 20px; height: 20px; vertical-align: middle;">
+              GitHub
+            </a>
+            <a href="https://github.com/Olaxee/OlaxeeTools" class="btn" target="_blank" style="position: absolute; right: 0; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width: 20px; height: 20px; vertical-align: middle;">
+              Repo GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="extra">
+          <span class="responsive-br"></span>
+          <p>Ce site sert uniquement à distribuer l'exécutable <code>iP_OlaxeeTools.exe</code>, l'APK <code>iP_OlaxeeTools.apk</code> et fournir la documentation nécessaire.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <nav id="bottom-nav" aria-label="Navigation">
+    <ul>
+      <li class="nav-item active" data-target="home">Accueil</li>
+      <li class="nav-item" data-target="download">Téléchargement</li>
+      <li class="nav-item" data-target="readme">README</li>
+      <li class="nav-item" data-target="mobile">Mobile</li>
+      <li class="nav-item" data-target="contact">Contact</li>
+    </ul>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

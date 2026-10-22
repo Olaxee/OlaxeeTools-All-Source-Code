@@ -1,0 +1,9 @@
+C:\Users\Admin\AppData\Local\Android\Sdk
+C:\Users\Admin\AppData\Local\Android\Sdk\platform-tools
+cd C:\Users\Admin\Documents\Owen\Code\AFFICHER iP\OlaxeeIPMobile
+C:\Users\Admin\AppData\Local\Android\Sdk\ndk\26.1.10909125
+
+cd C:\Users\Admin\Documents\Owen\Code\AFFICHER iP\OlaxeeIPMobile\android
+.\gradlew clean
+.\gradlew assembleRelease
+

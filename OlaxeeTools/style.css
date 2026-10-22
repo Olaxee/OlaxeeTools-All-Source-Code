@@ -1,0 +1,331 @@
+:root{
+  --bg:#08101a;
+  --panel:#0f1720cc;
+  --glass: rgba(255,255,255,0.06);
+  --accent:#6ee7b7;
+  --muted:#9aa7b8;
+  --text:#e6eef8;
+  --glass-border: rgba(255,255,255,0.08);
+}
+
+/* Reset & layout */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Désactive surbrillance tap globale WebKit */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #061016);
+  color: var(--text);
+  font-family: Inter, system-ui, Arial, sans-serif;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Lien style global */
+a {
+  color: #49c5a3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* Container */
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Pages (full viewport) */
+.page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem;
+  transition: opacity 360ms ease, transform 360ms ease, visibility 360ms;
+  opacity: 0;
+  transform: translateY(6vh) scale(0.995);
+  visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+.page.current {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+/* Center content */
+.center {
+  width: min(1100px, 94%);
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Typography */
+h1 {
+  font-size: 3.2rem;
+  margin: 0.2rem 0 0.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+h2 {
+  font-size: 2.2rem;
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+}
+.lead {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+.meta {
+  margin-top: 1.2rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  border: 1.2px solid var(--glass-border);
+  background: var(--panel);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0.25rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+  transition: transform 160ms ease, background 200ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+}
+.btn.big {
+  padding: 1rem 1.6rem;
+  font-size: 1.05rem;
+  border-radius: 14px;
+}
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), #49c5a3);
+  color: #042826;
+  border: 0;
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* File list & notes */
+.file-list {
+  list-style: disc;
+  margin: 0 auto 1rem 1.2rem;
+  color: #cfe3e9;
+}
+.notes {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Contact extra text */
+.extra {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Bottom navigation - glass bar */
+#bottom-nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 28px;
+  z-index: 40;
+  padding: 6px;
+  pointer-events: auto;
+  backdrop-filter: blur(10px) saturate(110%);
+  -webkit-backdrop-filter: blur(10px) saturate(110%);
+  border-radius: 48px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(9,18,25,0.18));
+  box-shadow: 0 10px 30px rgba(2,8,18,0.6);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 360px;
+  max-width: 760px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The inner list is compact, items centered */
+#bottom-nav ul {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 6px 14px;
+  align-items: center;
+  justify-content: center;
+}
+.nav-item {
+  padding: 10px 20px;
+  border-radius: 28px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--muted);
+  transition: background 220ms, color 220ms, transform 160ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-item.active {
+  background: linear-gradient(90deg, rgba(110,231,183,0.12), rgba(73,197,163,0.08));
+  color: var(--accent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.nav-item:hover {
+  transform: translateY(-3px);
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
+}
+
+/* === Responsive adjustments === */
+@media (max-width: 820px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  #bottom-nav {
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
+    padding: 4px;
+  }
+  .nav-item {
+    min-width: 80px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  .readme {
+    padding: 8px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  /* Pages padding less on small devices */
+  .page {
+    padding: 1.5rem 1rem 5rem;
+  }
+  /* Center width smaller and text center */
+  .center {
+    width: 90vw;
+    max-width: none;
+    text-align: center;
+  }
+  /* Headings smaller */
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  /* Buttons full width block */
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.6rem 0;
+    font-size: 0.95rem;
+  }
+  /* Navigation bar shrinks, smaller gaps */
+  #bottom-nav {
+    min-width: 260px;
+    max-width: 95vw;
+    padding: 4px 8px;
+    bottom: 12px;
+  }
+  #bottom-nav ul {
+    gap: 4px;
+    padding: 4px 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-item {
+    min-width: 70px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Suppression animation hover flèches README en responsive */
+  #readme .arrow {
+    transition: none !important;
+  }
+  #readme .arrow:hover {
+    transform: none !important;
+    background: transparent !important;
+    cursor: pointer;
+  }
+
+  /* Supprimer effet focus (halo vert) sur flèches README */
+  #readme .arrow:focus,
+  #readme .arrow:active {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Supprime surbrillance tactile WebKit sur les flèches */
+  #readme .arrow {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-user-select: none; /* Empêche sélection texte par accident */
+    user-select: none;
+  }
+
+  /* === Responsive pour boutons GitHub du contact === */
+  #contact .btn {
+    display: block !important;
+    width: 100% !important;
+    margin: 0.3rem 0 !important;
+    box-sizing: border-box;
+  }
+  /* Supprime position absolute pour les boutons GitHub afin qu'ils s'empilent */
+  #contact div[style*="position: relative;"] a {
+    position: static !important;
+  }
+}
+
+/* Saut de ligne visible uniquement sur grands écrans */
+.responsive-br {
+  display: inline-block;  /* comme un <br> visuel */
+  content: "";
+  width: 100%;
+  height: 0;
+}
+
+/* Masqué sur écrans ≤600px */
+@media (max-width: 600px) {
+  .responsive-br {
+    display: none;
+  }
+}
