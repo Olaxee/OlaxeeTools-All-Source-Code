@@ -2,3 +2,5 @@
 > Pour accéder au repo du site et des releases :
 # OlaxeeTools-All-Source-Code
 ### Sans Releases
+
+# 🌐 - [EN main page](https://github.com/Olaxee/OlaxeeTools-All-Source-Code/) [EN direct link](https://github.com/Olaxee/OlaxeeTools-All-Source-Code/blob/main/README.md)
