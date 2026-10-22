@@ -3,4 +3,4 @@
 # OlaxeeTools-All-Source-Code
 ### Without Releases
 
-# 🌐 - [EN main page](https://github.com/Olaxee/OlaxeeTools-All-Source-Code/) [EN direct link](https://github.com/Olaxee/OlaxeeTools-All-Source-Code/blob/main/README.md)
+# 🌐 - [FR](https://github.com/Olaxee/OlaxeeTools-All-Source-Code/blob/main/README-FR.md)
